@@ -111,7 +111,7 @@ compare.window[1:(base_3_y-300),(base_3_x+300):ncol(compare.window)] <- 0
 compare.window[(base_4_y+400):nrow(Minilya1_standardized),1:(base_4_x-400)] <- 0
 compare.window[1:(base_4_y-300),(base_4_x+300):ncol(compare.window)] <- 0
 
-compare.window[(base_5_y+500):nrow(Minilya1_standardized),1:(base_5_x-500)] <- 0
+compare.window[(base_5_y+400):nrow(Minilya1_standardized),1:(base_5_x-400)] <- 0
 compare.window[1:(base_5_y-400),(base_5_x+400):ncol(compare.window)] <- 0
 
 # Visualize the comparison window
@@ -143,13 +143,13 @@ image(y = Picard1_standardized[,1], x = Minilya1_standardized[,1], z = compare.w
 lines(Minilya1_standardized$Minilya1_scaled.Center_win[al_m1_p1_ap1$index1], Picard1_standardized$Picard1_scaled.Center_win[al_m1_p1_ap1$index2], col = "white", lwd = 2)
 
 # Tuning the standardized data on reference depth scale
-Minilya1_on_Picard1_depth = tune(Minilya1_standardized, cbind(Minilya1_standardized$Minilya1_scaled.Center_win[al_m1_p1_ap1$index1s], Picard1_standardized$Picard1_scaled.Center_win[al_m1_p1_ap1$index2s]), extrapolate = F)
+Minilya1_on_Picard1_depth_CW = tune(Minilya1_standardized, cbind(Minilya1_standardized$Minilya1_scaled.Center_win[al_m1_p1_ap1$index1s], Picard1_standardized$Picard1_scaled.Center_win[al_m1_p1_ap1$index2s]), extrapolate = F)
 
 dev.off()
 
 # Plotting the data
 
 plot(Picard1_standardized, type = "l", ylim = c(-20, 20), xlim = c(150, 1300), xlab = "Picard1 Resampled Depth", ylab = "Normalized GR (Minilya-1)")
-lines(Minilya1_on_Picard1_depth, col = "red")
+lines(Minilya1_on_Picard1_depth_CW, col = "red")
 
-plot(Minilya1_on_Picard1_depth, type = "l", ylim = c(-20, 20), xlim = c(150, 1300), xlab = "Picard1 Resampled Depth", ylab = "Minilya-1")
+plot(Minilya1_on_Picard1_depth_CW, type = "l", ylim = c(-20, 20), xlim = c(150, 1300), xlab = "Picard1 Resampled Depth", ylab = "Minilya-1")
