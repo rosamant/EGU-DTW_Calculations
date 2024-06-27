@@ -9,3 +9,14 @@ First, dtw is carried out without the application of custom window and the secon
 'Perform_DTW.R' file in the custom window section provides the code to plot the DTW density plot which indicates the DTW custom window space.
 
 To plot the results as seen on the poster, use the 'EGU-Result_Plot.R' file.
+
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
